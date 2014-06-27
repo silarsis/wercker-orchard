@@ -1,0 +1,11 @@
+name: orchardup-deploy
+version: 0.0.1
+description: Deploys to Orchardup
+keywords:
+  - orchardup
+  - orchard
+  - docker
+properties:
+  token:
+    type: string
+    required: true
