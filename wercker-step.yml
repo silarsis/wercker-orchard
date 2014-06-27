@@ -9,3 +9,12 @@ properties:
   token:
     type: string
     required: true
+  export_filename:
+    type: string
+    required: true
+  image_tag:
+    type: string
+    required: true
+  host_id:
+    type: string
+    required: false

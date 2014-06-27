@@ -1,6 +1,16 @@
 #!/bin/bash
 
-if [ ! -n "$ORCHARD_TOKEN" ]; then
+set -x
+
+if [ ! -n "$WERCKER_ORCHARDUP_DEPLOY_TOKEN" ]; then
+  fatal 'Please specify token property'
+fi
+
+if [ ! -n "$WERCKER_ORCHARDUP_DEPLOY_EXPORT_FILENAME" ]; then
+  fatal 'Please specify token property'
+fi
+
+if [ ! -n "$WERCKER_ORCHARDUP_DEPLOY_IMAGE_TAG" ]; then
   fatal 'Please specify token property'
 fi
 
