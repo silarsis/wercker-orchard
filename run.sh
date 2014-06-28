@@ -19,3 +19,4 @@ sudo apt-get install -y python-pip
 cd ${WERCKER_STEP_ROOT}
 sudo pip install orchard
 python ./deploy.py
+success "Successfully deployed to Orchard ready for restart"
