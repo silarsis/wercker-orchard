@@ -13,5 +13,5 @@ if [ ! -n "$WERCKER_ORCHARDUP_DEPLOY_IMAGE_TAG" ]; then
 fi
 
 sudo apt-get install -y python-pip
-sudo pip install -r requirements.txt
+sudo pip install orchard
 python deploy.py
