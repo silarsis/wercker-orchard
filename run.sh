@@ -12,6 +12,6 @@ if [ ! -n "$WERCKER_ORCHARDUP_DEPLOY_IMAGE_TAG" ]; then
   fatal 'Please specify token property'
 fi
 
-sudo apt-get install python-pip
+sudo apt-get install -y python-pip
 sudo pip install -r requirements.txt
 python deploy.py
