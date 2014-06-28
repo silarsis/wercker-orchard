@@ -1,8 +1,1 @@
 box: wercker/default
-build:
-  steps:
-    - script:
-        name: install pre-requisites
-        code: |
-          sudo apt-get install -y python-pip
-          sudo pip install -r requirements.txt
