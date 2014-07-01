@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -e
 set -x
 
 if [ ! -n "$WERCKER_ORCHARDUP_DEPLOY_TOKEN" ]; then
@@ -11,12 +10,6 @@ if [ ! -n "$WERCKER_ORCHARDUP_DEPLOY_EXPORT_FILENAME" ]; then
   fatal 'Please specify token property'
 fi
 
-if [ ! -n "$WERCKER_ORCHARDUP_DEPLOY_IMAGE_TAG" ]; then
-  fatal 'Please specify token property'
-fi
-
-sudo apt-get install -y python-pip
-cd ${WERCKER_STEP_ROOT}
-sudo pip install orchard
-python ./deploy.py
+curl https://github.com/orchardup/go-orchard/releases/download/2.0.7/linux > ./orchard
+ORCHARD_API_TOKEN=${WERCKER_ORCHARDUP_DEPLOY_TOKEN} ./orchard docker load ${WERCKER_ROOT}/${WERCKER_ORCHARDUP_DEPLOY_EXPORT_FILENAME}
 success "Successfully deployed to Orchard ready for restart"
