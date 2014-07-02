@@ -11,5 +11,6 @@ if [ ! -n "$WERCKER_ORCHARDUP_DEPLOY_EXPORT_FILENAME" ]; then
 fi
 
 curl https://github.com/orchardup/go-orchard/releases/download/2.0.7/linux > ./orchard
+chmod +x ./orchard
 ORCHARD_API_TOKEN=${WERCKER_ORCHARDUP_DEPLOY_TOKEN} ./orchard docker load ${WERCKER_ROOT}/${WERCKER_ORCHARDUP_DEPLOY_EXPORT_FILENAME}
 success "Successfully deployed to Orchard ready for restart"
